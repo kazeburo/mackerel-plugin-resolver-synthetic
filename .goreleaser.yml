@@ -1,0 +1,14 @@
+builds:
+  - binary: mackerel-plugin-resolver-synthetic
+    main: ./cmd/mackerel-plugin-resolver-synthetic
+    goos:
+      - linux
+    goarch:
+      - amd64
+archives:
+  - format: zip
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+release:
+  github:
+    owner: kazeburo
+    name: mackerel-plugin-resolver-synthetic
