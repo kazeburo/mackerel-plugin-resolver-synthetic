@@ -72,6 +72,13 @@ func TestResolveOnce(t *testing.T) {
 	err = opt.resolveOnce(ctx, "8.8.8.1", duration("1s"))
 	assert.Error(t, err)
 
+	opt = &Opt{
+		Question: "tcp-fallback.kazeburo.work.",
+		Expect:   "192.168.77.1",
+	}
+	err = opt.resolveOnce(ctx, "8.8.8.8", duration("10s"))
+	assert.NoError(t, err)
+
 	ctx, cancel := context.WithTimeout(ctx, duration("3s"))
 	defer cancel()
 	opt = &Opt{
@@ -80,4 +87,5 @@ func TestResolveOnce(t *testing.T) {
 	err = opt.resolveOnce(ctx, "8.8.8.1", duration("10s"))
 	assert.Error(t, err)
 	assert.NotNil(t, ctx.Err())
+
 }
