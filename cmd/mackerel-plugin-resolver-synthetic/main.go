@@ -64,7 +64,7 @@ func (o *Opt) GraphDefinition() map[string]mp.Graphs {
 	}
 }
 
-func (o *Opt) ResolveOnce(ctx context.Context, host string, timeout time.Duration) error {
+func (o *Opt) resolveOnce(ctx context.Context, host string, timeout time.Duration) error {
 	address := net.JoinHostPort(host, "53")
 
 	c := &dns.Client{Net: "udp", Timeout: timeout}
@@ -133,7 +133,7 @@ OUTLOOP:
 		for k, h := range o.Hosts {
 			timeout := o.resolvTimeout(k)
 			n := time.Now()
-			err = o.ResolveOnce(ctx, h, timeout)
+			err = o.resolveOnce(ctx, h, timeout)
 			rtt += time.Since(n)
 			if err == nil {
 				break OUTLOOP
