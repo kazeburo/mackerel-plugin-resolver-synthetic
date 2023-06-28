@@ -27,7 +27,7 @@ var version string
 
 type Opt struct {
 	Version bool   `short:"v" long:"version" description:"Show version"`
-	Prefix  string `long:"prefix" default:"dnsdist" description:"Metric key prefix"`
+	Prefix  string `long:"prefix" default:"resolver" description:"Metric key prefix"`
 
 	Hosts    []string      `short:"H" long:"hostname" default:"127.0.0.1" description:"DNS server hostnames"`
 	Question string        `short:"Q" long:"question" default:"example.com." description:"Question hostname"`
