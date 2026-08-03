@@ -17,10 +17,10 @@ require (
 )
 
 require (
-	github.com/mackerelio/golib v1.2.1 // indirect
+	github.com/mackerelio/golib v1.2.2 // indirect
 	github.com/stretchr/testify v1.11.1
-	golang.org/x/mod v0.37.0 // indirect
-	golang.org/x/net v0.56.0 // indirect
-	golang.org/x/sys v0.46.0 // indirect
-	golang.org/x/tools v0.47.0 // indirect
+	golang.org/x/mod v0.38.0 // indirect
+	golang.org/x/net v0.57.0 // indirect
+	golang.org/x/sys v0.47.0 // indirect
+	golang.org/x/tools v0.48.0 // indirect
 )
